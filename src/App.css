@@ -1,5 +1,6 @@
 .App {
   margin-top: 20%;
+  position: relative;
 }
 
 .header{
@@ -13,9 +14,9 @@ button.form-open-btn {
   border: none;
   margin: 0 0.25em;
   transition: all 0.3s;
-  padding:10px 30px;
+  padding:7px 30px;
   font-size: 20px;
-  background-color: aquamarine;
+  background-color: #6F9;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;

@@ -1,6 +1,6 @@
 import React from 'react'
 import './TableStyle.css'
-import { TList } from './TitleList'
+import { TList } from './../TitleList'
 
 
 export default function Table(){
@@ -20,7 +20,7 @@ export default function Table(){
             <td>test</td>
             <td>test</td>
             <td>test</td>
-            <td className="edit-buttons"><button className="edit">Edit</button><button className="delete">Delete</button></td>
+            <td className="edit-buttons"><button className="table-btn edit">ویرایش</button><button className="table-btn delete">حذف</button></td>
         </tr>
         </table>
     )
