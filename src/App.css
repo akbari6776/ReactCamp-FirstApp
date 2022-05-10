@@ -2,3 +2,26 @@
   margin-top: 20%;
 }
 
+.header{
+  display: flex;
+  justify-content:space-around;
+  margin-bottom: 20px;
+}
+
+button.form-open-btn {
+  border-radius: 10px;
+  border: none;
+  margin: 0 0.25em;
+  transition: all 0.3s;
+  padding:10px 30px;
+  font-size: 20px;
+  background-color: aquamarine;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+button:hover { 
+  box-shadow: 0 0 4px rgba(3,3,3,0.8); 
+  opacity: 0.9;
+}

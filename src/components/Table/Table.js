@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import TableStyle from './TableStyle.css'
+import React from 'react'
+import './TableStyle.css'
 import { TList } from './TitleList'
 
 
@@ -7,7 +7,7 @@ export default function Table(){
     return(
         // <TableHeader />
         <table className="table">
-        <tr>
+        <tr className='title'>
             {
                 TList.map(( item, i ) => {
                     return <th key={i}>{item}</th>

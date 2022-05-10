@@ -13,12 +13,16 @@ table.table {
 .table tr { 
   border-bottom: 1px solid #DDD;
 }
+.table tr.title { 
+  background-color: antiquewhite;
+}
 td.edit-buttons { text-align: right; }
 button { 
   border-radius: 3px; 
   border: none; 
   margin: 0 0.25em; 
   transition: all 0.3s;
+  padding:5px
 }
 
 button:hover { 
@@ -28,11 +32,9 @@ button:hover {
 
 button.edit { 
     background: #6F9;
-    padding:5px
 }
 button.delete { 
     background: #F69;
-    padding:5px
 }
 
 @media screen and (max-width: 800px) {
