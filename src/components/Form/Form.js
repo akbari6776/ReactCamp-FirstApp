@@ -2,6 +2,14 @@ import React from 'react'
 import './Form.css'
 import { inputName } from './../TitleList'
 
+
+
+
+const submitHandler =()=>{
+    inputName.map(( item ) => {
+        console.log(document.getElementById(`${item.id}-input`))
+    })
+}
 export default function form(){
     return(
         <form className='form'>
@@ -24,7 +32,7 @@ export default function form(){
                 }
             </div>
             <div className='form-footer'>
-                <button className='form-btn'>ثبت</button>
+                <button className='form-btn' onClick={submitHandler}>ثبت</button>
             </div>
         </form>
     )

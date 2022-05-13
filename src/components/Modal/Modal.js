@@ -2,9 +2,9 @@ import './Modal.css'
 import Form from '../Form/Form'
 
 
-export default function Modal(props){
+export default function Modal(){
     return(
-        <div className='modal' style={{display: props.status ? 'flex' : 'none'}}>
+        <div className='modal'>
             <Form/>
         </div>
     )
