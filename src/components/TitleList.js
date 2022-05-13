@@ -3,7 +3,7 @@ export const TList = [
     'نام خانوادگی',
     'سن',
     'عنوان',
-    'وضعیت',
+    'شهر',
     'عملیات'
 ]
 
@@ -22,15 +22,11 @@ export const inputName = [
         id : 'age'
     },
     {
-        label : 'شهر',
-        id : 'country'
-    },
-    {
         label : 'عنوان',
         id : 'role'
     },
     {
-        label : 'وضعیت',
-        id : 'status'
+        label : 'شهر',
+        id : 'contry'
     }
 ]

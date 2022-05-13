@@ -1,18 +1,43 @@
-import React from 'react'
+import {useState} from 'react'
 import './Form.css'
 import { inputName } from './../TitleList'
 
 
-
-
-const submitHandler =()=>{
-    inputName.map(( item ) => {
-        console.log(document.getElementById(`${item.id}-input`))
+export default function Form({setShowModal, setUsers}){
+    const [ user , setUser ] = useState({
+        name : '',
+        family : '',
+        age : '',
+        role : '',
+        contry : ''
     })
-}
-export default function form(){
+    console.log(user)
+
+    const addUserHandler = (e) => {
+        e.preventDefault();
+        
+        setUsers(prevState => {
+            return [
+                ...prevState,
+                user
+            ];
+        });
+        setShowModal(false);
+    }
+
+    const changeInput = (e) => {
+        let name = e.target.name;
+        let value = e.target.value;
+
+        setUser({
+            ...user,
+            [name] : value    
+        })
+    }
+
+
     return(
-        <form className='form'>
+        <form className='form' onSubmit={addUserHandler}>
             <div className='form-content'>
                 {
                     inputName.map(( item ) => {
@@ -23,7 +48,8 @@ export default function form(){
                                 </label>
                                 <input
                                 type="text"
-                                id={`${item.id}-input`}
+                                onChange={changeInput}
+                                name={`${item.id}`}
                                 className="input-form"
                                 />
                             </div>
@@ -32,7 +58,8 @@ export default function form(){
                 }
             </div>
             <div className='form-footer'>
-                <button className='form-btn' onClick={submitHandler}>ثبت</button>
+                <button className='form-btn' type="submit">ثبت</button>
+                <button className='form-open-btn' type="button" onClick={()=>{setShowModal(false)}}>بستن</button>
             </div>
         </form>
     )

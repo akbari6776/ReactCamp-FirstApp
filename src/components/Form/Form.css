@@ -1,7 +1,6 @@
 
 .form{
     background-color: rgb(255, 255, 255);
-    width: 20%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -51,7 +50,7 @@ button.form-btn {
 .input-form{
     border: none;
     background-color: rgb(240, 240, 240);
-    height: 10px;
+    height: 30px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
