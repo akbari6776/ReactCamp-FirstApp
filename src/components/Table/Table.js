@@ -3,7 +3,7 @@ import './TableStyle.css'
 import { TList } from './../TitleList'
 import UserData from './userData'
 
-export default function Table({ modal, setModal, users, setUsers }){
+export default function Table({ users, _deleteStatus ,setAction_, onEdite }){
     return(
         <table className="min-w-full divide-y divide-gray-300">
             <thead className="bg-gray-50">
@@ -17,8 +17,8 @@ export default function Table({ modal, setModal, users, setUsers }){
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
                 { users.length 
-                    ? users.map((data, index) => <UserData key={index} Data={data} />)
-                    : 'محتوایی برای نمایش وجود ندارد'
+                    ? users.map((data, index) => <UserData Data={data} _delete={_deleteStatus} setAction={setAction_} _onEdite={onEdite}/>)
+                    : <tr><td>محتوایی برای نمایش وجود ندارد</td></tr>
                 }
             </tbody>
         </table>

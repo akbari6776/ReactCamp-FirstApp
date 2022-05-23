@@ -1,9 +1,9 @@
 import {useState} from 'react'
 import './Form.css'
 import { inputName } from './../TitleList'
-
-
-export default function Form({setShowModal, setUsers}){
+import axios from 'axios'
+// axios.delete('https://628b497b0432524c58e5c8cf.endapi.io/users/2')
+export default function Form({setShowModal, setUsers, action_}){
     const [ user , setUser ] = useState({
         name : '',
         family : '',
@@ -11,17 +11,20 @@ export default function Form({setShowModal, setUsers}){
         role : '',
         contry : ''
     })
-    console.log(user)
-
-    const addUserHandler = (e) => {
+    const addUserHandler = async (e) => {
         e.preventDefault();
         
-        setUsers(prevState => {
-            return [
-                ...prevState,
-                user
-            ];
-        });
+        let res = await axios.post('https://628b497b0432524c58e5c8cf.endapi.io/users' , {
+            name : user.name,
+            family : user.family,
+            age : user.age,
+            role : user.role,
+            contry : user.contry,
+            password : '123456'
+        })
+        let _users = await axios.get('https://628b497b0432524c58e5c8cf.endapi.io/users')
+        setUsers(_users?.data?.data);
+
         setShowModal(false);
     }
 
@@ -35,14 +38,13 @@ export default function Form({setShowModal, setUsers}){
         })
     }
 
-
     return(
-        <form className='form' onSubmit={addUserHandler}>
+        <form className='form' onSubmit={action_ !== 'edite' ? addUserHandler : null}>
             <div className='form-content'>
                 {
-                    inputName.map(( item ) => {
+                    inputName.map(( item ,i) => {
                         return (
-                            <div className='input-area'>
+                            <div className='input-area' key={i}>
                                 <label className="lable-form">
                                 {item.label}
                                 </label>
