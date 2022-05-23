@@ -1,6 +1,6 @@
 import React from 'react'
 import './TableStyle.css'
-import { TList } from './../TitleList'
+import { TList } from './../List'
 import UserData from './userData'
 
 export default function Table({ users, _deleteStatus ,setAction_, onEdite }){

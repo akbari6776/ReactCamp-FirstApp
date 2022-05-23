@@ -11,7 +11,9 @@ function MainPage() {
     const [ users , setUsers ] = useState([]);
     const [ _action , setAction ] = useState('');
     const [ currentVal , setCurrentVal ] = useState([]);
+    
     console.log(currentVal)
+    
     useEffect(()=>{
         getUsersFromAli()
     },[])
@@ -21,7 +23,6 @@ function MainPage() {
         setUsers(_users?.data?.data);
     }
 
-    //baraye fahmidane noe Modal
     function onModalOpen(_name){
         setModal(true)
         setAction(_name)

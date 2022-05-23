@@ -10,16 +10,16 @@ export default function UserData({ Data, _delete, setAction, _onEdite }) {
         } catch (error) {
             console.log(error)
         }
-        _delete()
+        _delete() //call getUsersFromAli function from index for update view
     }
 
+    //set modal action and send current data to index
     function onEdite(_data){
         setAction('edite')
         _onEdite(_data)
     }
 
     let _id = Data.id
-
     return (
         <tr key={Data.id}>
             <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{Data.name}</td>

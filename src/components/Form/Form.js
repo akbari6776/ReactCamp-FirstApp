@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './Form.css'
-import { inputName } from './../TitleList'
+import { inputName } from '../List'
 import axios from 'axios'
 // axios.delete('https://628b497b0432524c58e5c8cf.endapi.io/users/2')
 export default function Form({setShowModal, setUsers, action_}){
@@ -11,6 +11,8 @@ export default function Form({setShowModal, setUsers, action_}){
         role : '',
         contry : ''
     })
+
+    //send data to api and set to state on index
     const addUserHandler = async (e) => {
         e.preventDefault();
         
@@ -28,6 +30,7 @@ export default function Form({setShowModal, setUsers, action_}){
         setShowModal(false);
     }
 
+    //get input value and set state on this component
     const changeInput = (e) => {
         let name = e.target.name;
         let value = e.target.value;
